@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>TestGetHeader</servlet-name>
+        <servlet-class>com.devway.tomcat.request.TestGetHeader</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TestGzip</servlet-name>
+        <servlet-class>com.devway.tomcat.request.TestGzip</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TestResponseCode</servlet-name>
+        <servlet-class>com.devway.tomcat.response.TestResponseCode</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TestSetHeader</servlet-name>
+        <servlet-class>com.devway.tomcat.response.TestSetHeader</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TestExcel</servlet-name>
+        <servlet-class>com.devway.tomcat.response.TestExcel</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TestCookie</servlet-name>
+        <servlet-class>com.devway.tomcat.cookie.TestCookie</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TestSession</servlet-name>
+        <servlet-class>com.devway.tomcat.session.TestSession</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>TestMVC</servlet-name>
+        <servlet-class>com.devway.tomcat.mvc.TestMVC</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AddBook</servlet-name>
+        <servlet-class>com.devway.tomcat.mvc.TestAddBook</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>MulitThread</servlet-name>
+        <servlet-class>com.devway.tomcat.thread.TestMultiThread</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>LastModified</servlet-name>
+        <servlet-class>com.devway.tomcat.cache.TestLastModified</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Expire</servlet-name>
+        <servlet-class>com.devway.tomcat.cache.TestExpire</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestGetHeader</servlet-name>
+        <url-pattern>/testGetHeader</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TestGzip</servlet-name>
+        <url-pattern>/testGzip</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TestResponseCode</servlet-name>
+        <url-pattern>/testResponseCode</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TestSetHeader</servlet-name>
+        <url-pattern>/testSetHeader</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TestExcel</servlet-name>
+        <url-pattern>/testExcel</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TestCookie</servlet-name>
+        <url-pattern>/testCookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TestSession</servlet-name>
+        <url-pattern>/testSession</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>TestMVC</servlet-name>
+        <url-pattern>/testMVC</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AddBook</servlet-name>
+        <url-pattern>/addBook</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>MulitThread</servlet-name>
+        <url-pattern>/mulitThread</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>Expire</servlet-name>
+        <url-pattern>/expire</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>LastModified</servlet-name>
+        <url-pattern>/lastModified</url-pattern>
+    </servlet-mapping>
+
+</web-app>
