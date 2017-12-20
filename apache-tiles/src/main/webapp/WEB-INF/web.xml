@@ -3,5 +3,8 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
       http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
-<display-name>spring</display-name>
+<display-name>apache-tiles</display-name>
+    <listener>
+        <listener-class>com.devway.apachetiles.listenter.TilesListener</listener-class>
+    </listener>
 </web-app>

@@ -7,6 +7,8 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>spring</module>
+      <module>apachetiles</module>
+    <module>apache-tiles</module>
   </modules>
   <name>exercise-java Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -17,8 +19,30 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>exercise-java</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.3</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
