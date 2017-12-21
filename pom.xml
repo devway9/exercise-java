@@ -9,6 +9,8 @@
     <module>spring</module>
       <module>apachetiles</module>
     <module>apache-tiles</module>
+      <module>security</module>
+      <module>example-j2se</module>
   </modules>
   <name>exercise-java Maven Webapp</name>
   <url>http://maven.apache.org</url>

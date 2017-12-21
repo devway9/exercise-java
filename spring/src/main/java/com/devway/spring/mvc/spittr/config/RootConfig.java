@@ -18,5 +18,5 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages = {"com.devway.spring.mvc.spittr"}, excludeFilters = {@ComponentScan.Filter(
         type = FilterType.ANNOTATION, value = EnableWebMvc.class
 )})
-public class RobotConfig {
+public class RootConfig {
 }

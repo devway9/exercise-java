@@ -11,8 +11,45 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-    <bean class="com.devway.spring.wiring.config.AutoWiringConfig" />
-    <bean class="com.devway.spring.wiring.config.JavaWiringConfig" />
-    <import resource="spring.xml"/>
+<!--name和id等价 -->
+<bean id="apple" class="com.devway.spring.wiring.pojo.fruit.Apple" p:desc="XML init"></bean>
+<bean name="meat" class="com.devway.spring.wiring.pojo.meat.BeefMeat"></bean>
+
+
+<!--使用非默认构造器创建对象 -->
+<!--    <bean id="apple1" class="com.devway.spring.wiring.pojo.fruit.Apple">
+        <constructor-arg value="50.0"/>
+        &lt;!&ndash;属性注入&ndash;&gt;
+        <property name="price" value="100"/>
+    </bean>-->
+
+<bean id="shoppingCart3" class="com.devway.spring.wiring.pojo.ShoppingCart">
+    <constructor-arg ref="apple"></constructor-arg>
+    <constructor-arg ref="meat"></constructor-arg>
+    <constructor-arg>
+        <list>
+            <value>str1</value>
+            <value>str2</value>
+        </list>
+    </constructor-arg>
+</bean>
+
+<!--使用c-命名空间代替constructor-agt ，但是c-命名空间无法装配集合-->
+<bean id="shoppingCart4" class="com.devway.spring.wiring.pojo.ShoppingCart"
+      c:_0-ref="apple"
+      c:_1-ref="meat"
+      c:_2="test"
+      c:_3="10"
+/>
+
+<!--使用p-命名空间进行属性注入,但不能直接装配集合，但可以使用util命名空间来替代-->
+<bean id="shoppingCart1" class="com.devway.spring.wiring.pojo.ShoppingCart" p:cardList-ref="cartList"/>
+
+<!--使用util-命名空间，创建列表-->
+<util:list id="cartList">
+    <value>fruit</value>
+    <value>meat</value>
+</util:list>
+
 
 </beans>

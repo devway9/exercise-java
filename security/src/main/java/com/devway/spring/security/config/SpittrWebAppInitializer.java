@@ -1,4 +1,4 @@
-package com.devway.spring.mvc.spittr.config;
+package com.devway.spring.security.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

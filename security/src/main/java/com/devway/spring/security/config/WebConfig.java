@@ -1,4 +1,4 @@
-package com.devway.spring.mvc.spittr.config;
+package com.devway.spring.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,8 +16,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.devway.spring.mvc.spittr")
-@ImportResource("classpath:spring.xml")
+@ComponentScan("com.devway.spring")
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public ViewResolver viewResolver() {

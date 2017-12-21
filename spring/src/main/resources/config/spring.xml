@@ -3,53 +3,35 @@
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:flow="http://www.springframework.org/schema/webflow-config"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/util
        http://www.springframework.org/schema/util/spring-util-4.0.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/webflow-config
+       http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.4.xsd
+        ">
+    <!--<import resource="spring2.xml"/>-->
 
-    <!--name和id等价 -->
-    <bean id="apple" class="com.devway.spring.wiring.pojo.fruit.Apple" p:desc="XML init"></bean>
-    <bean name="meat" class="com.devway.spring.wiring.pojo.meat.BeefMeat"></bean>
-
-
-    <!--使用非默认构造器创建对象 -->
-    <!--    <bean id="apple1" class="com.devway.spring.wiring.pojo.fruit.Apple">
-            <constructor-arg value="50.0"/>
-            &lt;!&ndash;属性注入&ndash;&gt;
-            <property name="price" value="100"/>
-        </bean>-->
-
-    <bean id="shoppingCart3" class="com.devway.spring.wiring.pojo.ShoppingCart">
-        <constructor-arg ref="apple"></constructor-arg>
-        <constructor-arg ref="meat"></constructor-arg>
-        <constructor-arg>
-            <list>
-                <value>str1</value>
-                <value>str2</value>
-            </list>
-        </constructor-arg>
+   <!-- <flow:flow-registry id="flowRegistry" base-path="/WEB-INF/flows">
+        <flow:flow-location-pattern value="*-flow.xml"/>
+    </flow:flow-registry>-->
+    <!--<flow:flow-registry id="flowRegistry" >
+            <flow:flow-location-pattern value="/WEB-INF/flows/flow1.xml" />
+        </flow:flow-registry>
+        <flow:flow-registry id="flowRegistry" >
+            <flow:flow-location id="flow1" value="/WEB-INF/flows/flow1.xml" />
+        </flow:flow-registry>
+        -->
+ <!--   <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+        <property name="flowRegistry" ref="flowRegistry" />
+    </bean>
+    <bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+        <property name="flowExecutor" ref="flowExecutor" />
     </bean>
 
-    <!--使用c-命名空间代替constructor-agt ，但是c-命名空间无法装配集合-->
-    <bean id="shoppingCart4" class="com.devway.spring.wiring.pojo.ShoppingCart"
-          c:_0-ref="apple"
-          c:_1-ref="meat"
-          c:_2="test"
-          c:_3="10"
-    />
-
-    <!--使用p-命名空间进行属性注入,但不能直接装配集合，但可以使用util命名空间来替代-->
-    <bean id="shoppingCart1" class="com.devway.spring.wiring.pojo.ShoppingCart" p:cardList-ref="cartList"/>
-
-    <!--使用util-命名空间，创建列表-->
-    <util:list id="cartList">
-        <value>fruit</value>
-        <value>meat</value>
-    </util:list>
-
-
+    <flow:flow-executor flow-registry="flowRegistry" id="flowExecutor"/>-->
 </beans>
